@@ -208,6 +208,8 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
     }
 
+    
+
     .card1:hover, .card2:hover, .card3:hover {
       color: #fff;
       background-color: #22159A;
@@ -622,14 +624,30 @@
       text-decoration: underline;
     }
 
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
     .social-icons a {
-      color: white;
-      margin: 0 10px;
-      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 1.5em;
+      transition: all 0.3s ease;
     }
 
     .social-icons a:hover {
-      color: #FFD700;
+      background: #007bff; /* Change this to your hover color */
+      color: #fff;
+      transform: scale(1.1);
+      box-shadow: 0 4px 6px rgba(0, 123, 255, 0.4);
     }
 
     .footer-section form {
@@ -809,8 +827,7 @@
             <div class="card-content">
               <h6 class="card-title">Coding & Design</h6>
               <p class="card-text">
-                Focusing towards creating innovative, user-centric solutions
-                to enhance efficiency, accessibility, and sustainability.
+                Focusing towards creating innovative, user-centric solutions.
               </p>
             </div>
           </div>
@@ -822,10 +839,9 @@
               <img src="./image/businessgoal-icon.png" alt="Email Icon" />
             </div>
             <div class="card-content">
-              <h6 class="card-title">Business Goal</h6>
+              <h6 class="card-title ">Business Goal</h6>
               <p class="card-text">
-                Our goal is to use our technology and expertise to drive innovation
-                and empower businesses globally.
+                Our goal is to use our technology and expertise to drive innovation.
               </p>
             </div>
           </div>
@@ -839,7 +855,7 @@
             <div class="card-content">
               <h6 class="card-title">Technology</h6>
               <p class="card-text">
-                We leverage AI, quantum computing, hybrid cloud, blockchain, and IoT to deliver innovative and secure solutions.
+                We leverage AI, quantum computing, and IoT to deliver secure solutions.
               </p>
             </div>
           </div>
