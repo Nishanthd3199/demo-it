@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png"  href="./image/IBM-logo.png">
+  <title>About Company - IT Corporate Website</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body{
+      overflow-x: hidden;
+    }
+    
+    .nav-btn{
+      border-radius: 5px;
+       /* Optional: Adds shadow for depth */
+    }
+
+    .navbar-nav {
+      margin: 0 auto; /* Center align the navbar items */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Center-align the middle nav links */
+    .navbar-nav.mx-auto {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+    }
+
+    /* Right-align login and button section */
+    .navbar-nav:last-child {
+      margin-left: auto; /* Push to the right */
+    }
+
+    /* Adjust alignment for logo and right section */
+    .navbar-brand {
+      margin-right: 10px;
+    }
+
+    .navbar-nav .nav-item {
+      margin: 0 10px; /* Optional spacing between items */
+    } 
+
+    .nav-btn:hover{
+      color: #fff; /* Change text color to white */
+      background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);      border: none; /* Optional: Ensure no border */
+      transition: all 0.3s ease; /* Smooth transition for hover effect */
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+    }
+
+    /* Add transition effect to the image */
+    .login-icon {
+      transition: filter 0.3s ease; /* Smooth transition effect */
+    }
+
+/* On hover, change color of the image */
+    .login-icon:hover {
+      filter: brightness(0.1) saturate(150%) invert(15%) sepia(50%) saturate(5000%) hue-rotate(220deg) brightness(0.8) contrast(120%);
+    }
+
+/* On click (active), slightly dim the image */
+    .login-icon:active {
+      filter: brightness(0) saturate(100%) invert(31%) sepia(94%) saturate(7481%) hue-rotate(214deg) brightness(1) contrast(92%); /* Slightly dimmed effect on click */
+    }
+
+    /* Hero Section Styles */
+    .hero-section {
+      position: relative;
+      height: 300px; /* Adjust as needed */
+    }
+    .hero-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7) sepia(1) hue-rotate(190deg) saturate(2); /* Blue filter effect */
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 4, 235, 0.349); /* Dark overlay for additional contrast */
+      z-index: 1;
+    }
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
+      color: white;
+    }
+    .hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .breadcrumb {
+      background: none;
+      padding: 0;
+      margin: 0;
+    }
+    .breadcrumb a {
+      color: #f8f9fa;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    h4{
+      color:#22159A;
+      padding-left: 50px;
+    }
+    
+    h5{
+        color: #22159A;
+        padding-left: 50px;
+    }
+
+    .paragraph1{
+        padding-top: 4px;
+        padding-left: 50px;
+        font-size: 28px;
+    }
+    
+    .paragraph3 {
+      text-align: start;
+      font-size: 28px;
+    }
+
+    .paragraph4 {
+      text-align: start;
+      font-size: 28px;
+    }
+
+    .circle-bullets {
+      list-style: none; /* Remove default bullets */
+      /*padding-left: 10px;  Remove default padding */
+      font-size: 18px;
+      font-weight: 480;
+    }
+
+    .circle-bullets li {
+      position: relative;
+      padding-left: 30px; /* Space for the circle */
+      margin-bottom: 10px;
+      cursor: pointer; /* Add hover effect */
+      text-decoration: none;
+    }
+
+    .circle-bullets li::before {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: -40px;
+      transform: translateX(50%);
+      width: 15px;
+      height: 15px;
+      background-color: #007bff;
+      border-radius: 50%;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .circle-bullets li:hover::before {
+      background-color: #007bff; /* Bootstrap primary color */
+      transform: scale(1); /* Enlarge the circle on hover */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .circle-bullets li:hover {
+      color: #000000; /* Optional: Change text color on hover */
+    }
+
+    .btn1 {
+      background-color: #FF9500; /* Button color */
+      color: #000000; /* Text color */
+      border: none; /* No border */
+      width: 135px;
+      border-radius: 5px; /* Creates smooth curves */
+      padding: 10px 20px; /* Adjust padding for button size */
+      font-size: 16px; /* Adjust font size */
+      cursor: pointer; /* Pointer cursor on hover */
+      transition: all 0.3s ease; /* Smooth hover effects */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for depth */
+    }
+
+    .btn1:hover {
+      color: #fff; /* Change text color to white */
+      background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);      border: none; /* Optional: Ensure no border */
+      transition: all 0.3s ease; /* Smooth transition for hover effect */
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Optional: Shadow effect on hover */
+    }
+
+    .card1, .card2, .card3 {
+      width: 350px;  /* Adjust width as needed */
+      height: 190px; /* Adjust height as needed */
+      display: flex;
+      align-items: center;
+      background-color: #f8f9fa; /* Optional background */
+      border-radius: 8px;       /* Optional rounded corners */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    }
+
+    .card1:hover, .card2:hover, .card3:hover {
+      color: #fff;
+      background-color: #22159A;
+      box-shadow: 0.5px 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card1:hover img, .card2:hover img, .card3:hover img {
+      filter: brightness(0) invert(1); /* Makes the image white */
+      transform: rotateY(180deg); /* Flip the image */
+      transition: transform 0.5s ease-in-out; /* Smooth flipping animation */
+    }
+
+    .card1:hover .card-title, 
+    .card2:hover .card-title, 
+    .card3:hover .card-title {
+      color: white; /* Makes the heading white */
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card1:hover .card-title, 
+    .card2:hover .card-title, 
+    .card3:hover .card-title {
+      color: white; /* Makes the heading white */
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card-icon img {
+      width: 40px;  /* Adjust size as needed */
+      height: auto; /* Maintain aspect ratio */
+    }
+
+    .card-content {
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .card-text {
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .paragraph5 {
+      text-align: start;
+      font-size: 28px;
+    }
+
+    .paragraph6 {
+      text-align: start;
+      font-size: 28px;
+    }
+
+    /*Milestone css*/
+
+    /* Timeline container */
+    .timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Line styling */
+    .line {
+      width: 1px;
+      /* Space between the circle and text */
+    }
+
+    .dashed-line {
+      height: 50px; /* Height of the dashed line */
+      border-left: 2px dashed #ffffff; /* Dashed line style */
+      margin-left: 7px;
+      padding-bottom: 25px;
+    }
+
+    /* Milestone container */
+    .milestone {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      max-width: 500px; /* Optional: Limit timeline width */
+    }
+
+    /* Circle for each milestone */
+    .milestonecircle {
+      width: 15px; /* Circle size */
+      height: 15px;
+      border: 2px solid #00bfff; /* Border color for the circle */
+      background-color: transparent; /* Hollow circle */
+      border-radius: 50%; /* Circle shape */
+      cursor: pointer;
+      position: relative;
+      z-index: 1; /* Ensures the circle is above the dashed line */
+    }
+
+    /* Content text styling */
+    .content {
+      margin-left: 20px; /* Space between the circle and text */
+      font-size: 16px;
+      line-height: 1.5;
+      color: #fff;
+    }
+
+    .content {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    
+    .details {
+      display: block;
+      margin-left: 4px;
+      margin-top: 30px; /* Adds space between the content and the paragraph */
+      font-size: 1em; /* Optional: Adjust font size for the paragraph */
+      color: #f0f0f0; /* Optional: Adjust text color for better readability */
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /*circle graph*/
+    .container {
+      position: relative;
+      display: flex;
+      gap: 15%;
+    }
+
+    .circle {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      background-color: #2617AC;
+      border-radius: 50%;
+    }
+    
+    .circle circle {
+      fill: none;
+      stroke-width: 8;
+      stroke-linecap: round;      
+    }
+    /* .circle .bg {
+      stroke: #3498db;
+    } */
+    .circle .progress {
+      stroke: #d33c00;
+      stroke-dasharray: 440;
+      stroke-dashoffset: 440;
+      transition: stroke-dashoffset 1s ease;
+    }
+    .circle .percentage {
+      position: absolute;
+      top: 50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .details.hidden {
+      display: none;
+    }
+
+    .details {
+      display: block;
+    }
+    
+    /* Employee Card Styles */
+    .employee-card {
+      position: absolute;
+      top: 60%;
+      left: 58%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 200px;
+      opacity: 0; /* Hidden by default */
+      visibility: hidden; /* Prevents interaction */
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 2;
+    }
+
+    .social-icons {
+      display: flex;
+      border-radius: 50%;
+      justify-content: center;
+      gap: 7px;
+    }
+
+    .social-icons a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 35px;
+      height: 35px;
+      /* border-radius: 35% / 50%; */
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 1.5em;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      /*background: #007BFF;*/
+      color: #fff;
+      transform: scale(1.1);
+      box-shadow: 0 4px 6px #007bff66;
+    }
+
+    /* Show employee-card on hover */
+    .emp-card:hover .employee-card {
+      opacity: 1;
+      visibility: visible;
+      background-image: linear-gradient(to right bottom, #22159a, #2719af, #2d1cc5, #3320db, #3924f1);
+    }
+
+    /* Gradient Hover Effects for Icons */
+    .social-icons a.facebook:hover {
+      background: #145dbf;
+      border-radius: 90% / 90%;
+      color: #fff;
+    }
+
+    .social-icons a.twitter:hover {
+      background: #1DA1F2;
+      border-radius: 90% / 90%;
+      color: #fff;
+    }
+
+    .social-icons a.linkedin:hover {
+      background: #0A66C2;
+      border-radius: 90% / 90%;
+      color: #fff;
+    }
+
+    .social-icons a.instagram:hover {
+      background: linear-gradient(45deg, #FFDC80, #F77737, #C13584, #833AB4, #5851DB);
+      border-radius: 90% / 90%;
+    }
+
+    /* Employee Card Image Styles */
+    .emp-card1, .emp-card2, .emp-card3 {
+      width: 230px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+    }
+
+    .emp-card-icon img {
+      width: 230px;
+      height: auto;
+    }
+
+    .emp-card-icon img:hover {
+      box-shadow: 0.5px 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .emp-card-title {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .emp-card-text {
+      width: 230px;
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0;
+    }
+    
+    .accordion-button {
+      background-color: #f8f9fa; /* Default background */
+      color: #000; /* Default text color */
+      transition: all 0.3s ease-in-out;
+      font-weight: 500;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background: linear-gradient(45deg, #FF7F50, #FF6347, #FF4500); /* Gradient for active state */
+      font-weight: 500;
+      color: #fff; /* Text color for better contrast */
+    }
+
+    .accordion-button:focus {
+      box-shadow: none; /* Optional: Remove the default focus ring */
+    }
+
+    .accordion-button::after {
+      font-family: "Font Awesome 5 Free";
+      content: "\f067"; /* FontAwesome plus icon */
+      font-weight: 900;
+      font-size: 1.2em;
+      margin-left: auto;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+      content: "\f068"; /* FontAwesome minus icon */
+    }
+
+    .accordion-button::after {
+      display: none;
+    }
+
+    /* Add custom plus/minus icons */
+    .accordion-button::before {
+      font-family: "Font Awesome 5 Free";
+      content: "\f067"; /* FontAwesome plus icon */
+      font-weight: 600;
+      font-size: 1em;
+      margin-bottom: 3px;
+      margin-right: 10px;
+      transition: transform 0.3s ease-in-out;
+      color: #ff0000;      
+    }
+
+    .accordion-button:not(.collapsed)::before {
+      content: "\f068"; /* FontAwesome minus icon */
+      color: #ffffff;
+    }
+
+    .scroll-to-top-btn{
+      position: fixed; /* Keep the button in a fixed position */
+      bottom: 350px;    /* Position it 50px above the bottom of the viewport */
+      right: 20px;     /* Position it 20px from the right side of the viewport */
+      background-color: #ffffff; /* Blue background */
+      color: #22159A;    /* White text */
+      border: none;    /* Remove border */
+      border-radius: 50%; /* Make it circular */
+      border: 1.6px solid #22159A;
+      width: 50px;     /* Set a width */
+      height: 50px;    /* Set a height */
+      display: flex;   /* Center the content inside */
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+      cursor: pointer; /* Change cursor to pointer */
+      z-index: 1000;   /* Ensure it's on top of other elements */
+    }
+
+    .scroll-to-top-btn:hover {
+      background-color: #dcdaec;
+      border: none;
+    }
+    .scroll-to-top-btn i {
+      font-size: 20px;
+    }
+
+      /*footer*/
+    footer {
+      background-color: #22159A;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    .footer-logo{
+      filter: brightness(0) invert(1);
+    } 
+
+    .footer-section h2.logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .footer-section h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      font-size: 14px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin: 5px 0;
+    }
+
+    .footer-section ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 18px;
+    }
+
+    .social-icons a:hover {
+      color: #FFD700;
+    }
+
+    .footer-section form {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+     /* Base styling for placeholder text */
+    .placeholder-custom::placeholder {
+      font-size: 16px; /* Default size */
+      color: #6c757d; /* Use Bootstrap's text-muted color */
+      opacity: 1; /* Ensure full visibility */
+    }
+
+    /* Responsive adjustments for placeholder size */
+    @media (max-width: 768px) { /* Medium screens */
+      .placeholder-custom::placeholder {
+       font-size: 12px; /* Smaller placeholder text for medium screens */
+      }
+    }
+
+    @media (max-width: 576px) { /* Small screens */
+      .placeholder-custom::placeholder {
+      font-size: 12px; /* Even smaller placeholder text for small screens */
+      }
+    }
+
+    /* Optional: Ensure input text matches placeholder size */
+    .placeholder-custom {
+      font-size: 16px; /* Match placeholder default size */
+    }
+
+    @media (max-width: 768px) {
+      .placeholder-custom {
+        font-size: 12px; /* Match placeholder size on medium screens */
+      }
+    }
+
+    @media (max-width: 576px) {
+      .placeholder-custom {
+        font-size: 12px; /* Match placeholder size on small screens */
+      }
+    }
+
+    .footer-section input {
+      padding: 10px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      flex: 1;
+    }
+
+    .sbt-btn {
+      width: 50px;
+      padding: 10px;
+      background-color: orange;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: rgb(43, 255, 0);
+      color: #2929ff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin-top: 20px;
+      padding-top: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <nav class="navbar navbar-expand-lg bg-light fixed-top">
+    <div class="container">
+      <!-- Logo on the left -->
+      <a class="navbar-brand" href="./index.html">
+        <img src="./image/IBM-logo.png" alt="Brand Logo" style="width: 78px; height: 30px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Centered navigation links -->
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./service.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">Contact</a>
+          </li>
+        </ul>
+        <!-- Login icon and Get in Touch button on the right -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">
+              <img src="./image/login-icon.png" class="login-icon image-fluid pt-1" style="width: 31px; height: 32.5px">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-btn text-bg-warning" href="#contactForm">Get in Touch</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <!-- Image -->
+    <img src="./image/heroicbanner.png" alt="Contact Banner">
+    
+    <!-- Overlay -->
+    <div class="hero-overlay"></div>
+    
+    <!-- Content -->
+    <div class="hero-content">
+      <h1>About Us</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center">
+          <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+          <li class="breadcrumb-item active text-light" aria-current="page">About</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+  
+  <section>
+    <div class ="container-image pt-3 row">  
+      <div class="contact-form col-7 pt-3 p-5">
+          <h5 class="heading5 text-start ps-0">About Company</h5>
+          <b>
+              <p class="paragraph3">Business Agency That Helps</p>
+              <p class="paragraph4">You Succeed</p>
+          </b>
+          <p class="paragraph2 text-start">
+            We are global technologyand consulting company specializing in AI, cloud Computing, and quantum computing with a legacy of innovation, we focus on transforming businesses through cutting-edge ebteprise solutions
+          </p>
+          <div class="container mt-5">
+            <ul class="circle-bullets">
+              <li class="ps-0">Service for international clients</li>
+              <li class="ps-0">Weu 3019re the leaders in web and App based</li>
+              <li class="ps-0">Utilize your time at a maximum efficiency</li>
+            </ul>
+          </div>
+          <div class="col-auto ps-5">
+            <button class="btn1">
+              <b>Discover </b>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+      </div>
+      <div class="col-5">
+        <img src="./image/about-img01.jpg" class="img-fluid" alt="Contact Banner" style="width: 500px; height: auto;"> 
+      </div>
+    </div>
+  </section>
+  <section class="card01">
+    <div class="container py-5 d-flex justify-content-center align-items-center">
+      <div class="row g-5 justify-content-center">
+        <!-- Card 1 -->
+        <div class="col-md-4 d-flex justify-content-center">
+          <div class="card1 p-4 d-flex align-items-center text-center">
+            <div class="card-icon me-3">
+              <img src="./image/coding&design-icon.png" alt="Phone Icon" />
+            </div>
+            <div class="card-content">
+              <h6 class="card-title">Coding & Design</h6>
+              <p class="card-text">
+                Focusing towards creating innovative, user-centric solutions
+                to enhance efficiency, accessibility, and sustainability.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-4 d-flex justify-content-center">
+          <div class="card2 p-4 d-flex align-items-center text-center">
+            <div class="card-icon me-3">
+              <img src="./image/businessgoal-icon.png" alt="Email Icon" />
+            </div>
+            <div class="card-content">
+              <h6 class="card-title">Business Goal</h6>
+              <p class="card-text">
+                Our goal is to use our technology and expertise to drive innovation
+                and empower businesses globally.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-4 d-flex justify-content-center">
+          <div class="card3 p-4 d-flex align-items-center text-center">
+            <div class="card-icon me-3">
+              <img src="./image/technology-icon.png" alt="Location Icon" />
+            </div>
+            <div class="card-content">
+              <h6 class="card-title">Technology</h6>
+              <p class="card-text">
+                We leverage AI, quantum computing, hybrid cloud, blockchain, and IoT to deliver innovative and secure solutions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="history" style="background-image: linear-gradient(to right bottom, #3924f1, #3228dd, #2e2bc9, #2b2cb5, #2a2ca1);">
+    <div class="container py-5">
+      <div class="row g-5 align-items-center ">
+        <div class="col-md-6 ">
+          <img src="./image/about-img02.png" class="img-fluid d-none d-md-block">
+        </div>
+        <div class="col-md-6 text-center text-md-start position-relative" style="top: -20px;">
+          <h5 class="heading5 text-light ps-0">History</h5>
+          <b>
+            <p class="paragraph5 text-light">Pioneering Innovation, Transforming</p>
+            <p class="paragraph6 text-light text-center text-md-start">History, Shaping the Future.</p>
+          </b>
+          <br>
+          <div class="timeline" >
+            <div class="line dashed-line"></div>
+            <!-- Milestone 1 -->
+            <div class="milestone">
+              <div class="milestonecircle"></div>
+              <div class="content"><b>1911</b> - Our Founding</div>
+              <p class="details hidden">In 1911, the company was founded, focusing on groundbreaking technology and innovation.</p>
+            </div>
+            <div class="line dashed-line"></div>
+            <!-- Milestone 2 -->
+            <div class="milestone">
+              <div class="milestonecircle"></div>
+              <div class="content"><b>2010</b> - Embracing the Cloud and AI</div>
+              <p class="details hidden">In 1911, the company was founded, focusing on groundbreaking technology and innovation.</p>
+            </div>
+            <div class="line dashed-line"></div>
+            <!-- Milestone 3 -->
+            <div class="milestone">
+              <div class="milestonecircle"></div>
+              <div class="content"><b>2014</b> - Expanding with Red Hat</div>
+              <p class="details hidden">In 1911, the company was founded, focusing on groundbreaking technology and innovation.</p>
+            </div>
+            <div class="line dashed-line"></div>
+            <!-- Milestone 4 -->
+            <div class="milestone">
+              <div class="milestonecircle"></div>
+              <div class="content"><b>2018</b> - Leading in Quantum Computing</div>
+              <p class="details hidden">In 1911, the company was founded, focusing on groundbreaking technology and innovation.</p>
+            </div>
+            <div class="line dashed-line"></div>
+            <!-- Milestone 5 -->
+            <div class="milestone">
+              <div class="milestonecircle"></div>
+              <div class="content">2024 - Innovating for the Future</div>
+              <p class="details hidden">In 1911, the company was founded, focusing on groundbreaking technology and innovation.</p>
+            </div>
+            <div class="line dashed-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Milestone html style="align-items: end;"-->    
+    <div class="container px-5 py-5 justify-content-center">
+      <div class="circle" data-percentage="70">
+        <svg>
+          <circle class="bg" cx="75" cy="75" r="70"></circle>
+          <circle class="progress" cx="75" cy="75" r="70"></circle>
+        </svg>
+        <div class="percentage">70%</div>
+        <div class="" >
+          <h5 class="text-light pt-2 ps-0">Project management</h5>
+        </div>
+      </div>
+      <div class="circle" data-percentage="83">
+        <svg>
+          <circle class="bg" cx="75" cy="75" r="70"></circle>
+          <circle class="progress" cx="75" cy="75" r="70"></circle>
+        </svg>
+        <div class="percentage">83%</div>
+        <div class="" >
+          <h5 class="text-light pt-2">UIUX development</h5>
+        </div>
+      </div>
+      <div class="circle" data-percentage="60">
+        <svg>
+          <circle class="bg" cx="75" cy="75" r="70"></circle>
+          <circle class="progress" cx="75" cy="75" r="70"></circle>
+        </svg>
+        <div class="percentage">60%</div>
+        <div class="" >
+          <h5 class="text-light pt-2">Global Presence</h5>
+        </div>
+      </div>
+      <div class="circle" data-percentage="97.8">
+        <svg>
+          <circle class="bg" cx="75" cy="75" r="70"></circle>
+          <circle class="progress" cx="75" cy="75" r="70"></circle>
+        </svg>
+        <div class="percentage">99%</div>
+        <div class="" >
+          <h5 class="text-light pt-2">Happy clients</h5>
+        </div>
+      </div>
+    </div>
+    <br>
+  </section>
+
+            <!-- circle graph-->
+  <section class="">
+    
+  </section>
+      <!--Employee card-->
+      <section class="card01 pt-5">
+        <div class="contact-form">
+          <h5 class="heading4 pt-4" style="text-align: center;">Team Associate</h5>
+          <b>
+                <p class="paragraph1" style="text-align: center;">Our Experts Workforce</p>
+          </b>
+        </div>
+        <div class="container py-5 d-flex justify-content-center align-items-center">
+          <div class="row g-5 justify-content-center">
+            <!-- emp Card 1 -->
+            <div class="col-md-4 d-flex flex-column align-items-center position-relative emp-card">
+              <div class="emp-card1 p-4 d-flex align-items-center text-center">
+                <div class="emp-card-icon me-3">
+                  <img src="./image/emp01.png" alt="Eddie Ricky" />
+                </div>
+              </div>
+              <div class="employee-card">
+                <div class="social-icons">
+                  <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+              
+              <div class="col-4 emp-card-text text-center ps-3">
+                <h6 class="emp-card-title pt-5">Eddie Ricky</h6>
+                <p class="text-muted">Technical Associate</p>
+              </div>
+            </div>
+            <!-- emp Card 2 -->
+            <div class="col-md-4 d-flex flex-column align-items-center position-relative emp-card">
+              <div class="emp-card2 p-4 d-flex align-items-center text-center">
+                <div class="emp-card-icon me-3">
+                  <img src="./image/emp02.png" alt="Aveline Jenni" />
+                </div>
+              </div>
+              <div class="employee-card">
+                <div class="social-icons">
+                  <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+              <div class="col-4 emp-card-text text-center ps-3">
+                <h6 class="emp-card-title pt-5">Aveline Jenni</h6>
+                <p class="text-muted">UI/UX Designer</p>
+              </div>
+            </div>
+            <!-- emp Card 3 -->
+            <div class="col-md-4 d-flex flex-column align-items-center position-relative emp-card">
+              <div class="emp-card2 p-4 d-flex align-items-center text-center">
+                <div class="emp-card-icon me-3">
+                  <img src="./image/emp03.png" alt="Aveline Jenni" />
+                </div>
+              </div>
+              <div class="employee-card">
+                <div class="social-icons">
+                  <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+              <div class="col-4 emp-card-text text-center ps-3">
+                <h6 class="emp-card-title pt-5">Maguie Rauf</h6>
+                <p class="text-muted">uman Resource Management</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class ="container-image pt-3 row">  
+          <div class="col-6">
+            <img src="./image/about-img03.png" class="img-fluid" alt="Contact Banner"style="width: 600px; height= auto"> 
+          </div>
+          <div class="contact-form col-6 pt-3 p-5">
+              <h5 class="heading5 text-start ps-0">Any query</h5>
+              <b>
+                  <p class="paragraph3">Frequently asked Questions</p>
+              </b>
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      Where does thr journey of ubm Start from
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">IBM, founded in 1911 and renamed in 1924, is a global tech leader in AI, cloud, and quantum computing, headquartered in Armonk, New York. <!--code>.accordion-flush</code--> </div>
+                  </div>
+                </div>
+                <br>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      What are the benefits of join in internship
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">We offer internship provides hands-on experience, skill development, and career growth. <!--code>.accordion-flush</code--> </div>
+                  </div>
+                </div>
+                <br>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                      Advantages of working in on-site
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Working on-site with us offers better collaboration, networking, access to resources, career growth, and immersion in the company's culture.<code>.accordion-flush</code> </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section> 
+      <div class="row">
+        <div class="col-9">
+  
+        </div>
+        <div class="scroll-to-top" pe-0 col-3>
+          <button class="scroll-to-top-btn">
+            <i class="fa-solid fa-chevron-up"></i>
+          </button>
+        </div>
+      </div>
+      <footer>
+        <div class="footer-container">
+          <div class="footer-section">
+            <img src="./image/IBM-logo.png" class="footer-logo pb-3" style="width: 78px; height: 42px">
+            <p>Be part of a community that drives innovation. Follow us for updates and insights!</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Service</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>#12, Bannerghatta Main Road,<br>Bangalore - 560029.</p>
+            <p>CALL: 1-800-426-2255</p>
+            <p><a href="dnishanth31@gmail.com">rccindia@in.ibm.com</a></p>
+          </div>
+          <div class="footer-section">
+            <h3>Subscribe</h3>
+            <p>Follow our newsletter to stay updated about us</p>
+            <form id="subscribe-form" class="row justify-content-center">
+              <div class="col-md-7 col-sm-8 col-10">
+                <div class="input-group">
+                  <input
+                    type="email-input" 
+                    class="form-control placeholder-custom"
+                    placeholder="Your Email Address"
+                    required
+                  />
+                  <button type="submit" class="btn btn-primary"><b>></b></button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>2024 International Business Machine Corporation. All rights reserved</p>
+        </div>
+      </footer>         
+      <!--script>                 < customized script forccordion by me >
+        // Add event listeners to all accordion buttons
+        document.querySelectorAll('.accordion-button').forEach(button => {
+          button.addEventListener('click', () => {
+            const collapse = button.getAttribute('data-bs-target');
+            const collapseElement = document.querySelector(collapse);
+    
+            // If the accordion is expanded, manually collapse it
+            if (!button.classList.contains('collapsed')) {
+              collapseElement.classList.remove('show'); // Collapse the accordion body
+              button.classList.add('collapsed'); // Add the collapsed class back
+              button.setAttribute('aria-expanded', 'false');
+            }
+          });
+        });
+      </script-->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Select all milestone circles
+      const milestoneCircles = document.querySelectorAll(".milestonecircle");
+
+      // Loop through each milestone circle and add a click event listener
+      milestoneCircles.forEach((circle) => {
+        circle.addEventListener("click", () => {
+          // Find the corresponding paragraph
+          const details = circle.parentElement.querySelector(".details");
+        
+          // Toggle the 'hidden' class on the paragraph
+          if (details) {
+            details.classList.toggle("hidden");
+          }
+        });
+      });
+    });
+
+    function toggleDetails(circle) {
+     // Hide all other paragraphs
+     const allDetails = document.querySelectorAll('.details');
+     allDetails.forEach((detail) => detail.classList.add('hidden'));
+
+     // Find the parent milestone div
+     const milestone = circle.parentElement;
+
+     // Find the paragraph element within the content
+     const details = milestone.querySelector('.details');
+
+     // Make sure the paragraph is shown
+     details.classList.remove('hidden'); // Remove the 'hidden' class to display the paragraph
+    }
+
+
+    document.querySelectorAll('.circle').forEach(circle => {
+      const percentage = circle.getAttribute('data-percentage');
+      const progressCircle = circle.querySelector('.progress');
+      const radius = progressCircle.r.baseVal.value;
+      const circumference = 2 * Math.PI * radius;
+
+      progressCircle.style.strokeDasharray = `${circumference}`;
+      progressCircle.style.strokeDashoffset = `${circumference}`;
+
+      const offset = circumference - (percentage / 100) * circumference;
+      progressCircle.style.strokeDashoffset = offset;
+    });
+
+    // Add click event listener to the button
+    document.querySelector('.scroll-to-top-btn').addEventListener('click', function() {
+      // Scroll to the "Get in touch" section
+      const targetSection = document.querySelector('.hero-content');
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    
+
+                // email sending js  
+    // emailjs.init("dnishanth31@gmail.com"); // Replace with your EmailJS user ID
+
+    // document.getElementById("subscribe-form").addEventListener("submit", function (e) {
+    //   e.preventDefault();
+
+    //   const email = document.getElementById("email").value;
+    //   const date = new Date();
+    //   const formattedDate = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+
+    //   const templateParams = {
+    //     email: email,
+    //     date: formattedDate,
+    //   };
+
+    //   emailjs
+    //     .send("service_tqgnymr", "YOUR_TEMPLATE_ID", templateParams)
+    //     .then(
+    //       function (response) {
+    //         alert("Email sent successfully!");
+    //       },
+    //       function (error) {
+    //         alert("Failed to send email, please try again.");
+    //       }
+    //     );
+    //   });
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

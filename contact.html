@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./image/IBM-logo.png">
+  <title>Contact Us - IT Corporate Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body{
+      overflow-x: hidden;
+    }
+    
+    .nav-btn{
+      border-radius: 5px;
+       /* Optional: Adds shadow for depth */
+    }
+
+    .navbar-nav {
+      margin: 0 auto; /* Center align the navbar items */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Center-align the middle nav links */
+    .navbar-nav.mx-auto {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+    }
+
+/* Right-align login and button section */
+.navbar-nav:last-child {
+  margin-left: auto; /* Push to the right */
+}
+
+/* Adjust alignment for logo and right section */
+.navbar-brand {
+  margin-right: 10px;
+}
+
+.navbar-nav .nav-item {
+  margin: 0 10px; /* Optional spacing between items */
+}
+
+
+    .nav-btn:hover{
+      color: #fff; /* Change text color to white */
+      background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);      border: none; /* Optional: Ensure no border */
+      transition: all 0.3s ease; /* Smooth transition for hover effect */
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+    }
+
+    /* Add transition effect to the image */
+    .login-icon {
+      transition: filter 0.3s ease; /* Smooth transition effect */
+    }
+
+/* On hover, change color of the image */
+    .login-icon:hover {
+      filter: brightness(0.1) saturate(150%) invert(15%) sepia(50%) saturate(5000%) hue-rotate(220deg) brightness(0.8) contrast(120%);
+    }
+
+
+
+/* On click (active), slightly dim the image */
+    .login-icon:active {
+      filter: brightness(0) saturate(100%) invert(31%) sepia(94%) saturate(7481%) hue-rotate(214deg) brightness(1) contrast(92%); /* Slightly dimmed effect on click */
+    }
+
+    /* Hero Section Styles */
+    .hero-section {
+      position: relative;
+      height: 300px; /* Adjust as needed */
+    }
+    .hero-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7) sepia(1) hue-rotate(190deg) saturate(2); /* Blue filter effect */
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0004eb59; /* Dark overlay for additional contrast */
+      z-index: 1;
+    }
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
+      color: white;
+    }
+    .hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .breadcrumb {
+      background: none;
+      padding: 0;
+      margin: 0;
+    }
+    .breadcrumb a {
+      color: #f8f9fa;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    h4{
+      color:#22159A;
+      padding-left: 50px;
+    }
+    
+    h5{
+        color: #22159A;
+        padding-left: 150px;
+    }
+
+    .paragraph1{
+        padding-top: 4px;
+        padding-left: 50px;
+        font-size: 32px;
+    }
+
+    /* Add spacing between fields and button */
+    input, button {
+      display: block;
+      margin: 15px 0; /* Adds 15px vertical space between elements */
+      padding: 10px;  /* Optional: Add padding inside the fields */
+      width: 100%;    /* Optional: Makes inputs and button full-width */
+      max-width: 370px; /* Limits the width for better UI */
+    }
+
+    .custom-height {
+     height: 100px; /* Adjust the height as needed */
+    }
+
+    .custom-height::placeholder {
+     position: absolute;
+     transform: translateY(-150%);
+     text-align: left;
+    }
+
+    .btn1 {
+      background-color: #FF9500; /* Button color */
+      color: #000000; /* Text color */
+      border: none; /* No border */
+      width: 200px;
+      border-radius: 5px; /* Creates smooth curves */
+      padding: 10px 20px; /* Adjust padding for button size */
+      font-size: 16px; /* Adjust font size */
+      cursor: pointer; /* Pointer cursor on hover */
+      transition: all 0.3s ease; /* Smooth hover effects */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for depth */
+    }
+
+    .btn1:hover {
+      color: #fff; /* Change text color to white */
+      background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);      border: none; /* Optional: Ensure no border */
+      transition: all 0.3s ease; /* Smooth transition for hover effect */
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Optional: Shadow effect on hover */
+    }
+
+    .card1, .card2, .card3 {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      width: 330px;
+      height: 215px;
+    }
+
+    .card1:hover {
+      transform: translateY(-5px);
+      background-color: #e6a0a0;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card2:hover {
+      transform: translateY(-5px);
+      background-color: #bfeff5a0;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card3:hover {
+      transform: translateY(-5px);
+      background-color: #948ecc;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-icon {
+      font-size: 50px;
+      color: #FF9500;
+      margin-bottom: 15px;
+    }
+    
+    p{
+      font-size: 16.5px;
+    }
+
+    span{
+      font-size: 14px;
+    }
+
+    .scroll-to-top-btn{
+      position: fixed; /* Keep the button in a fixed position */
+      bottom: 350px;    /* Position it 50px above the bottom of the viewport */
+      right: 20px;     /* Position it 20px from the right side of the viewport */
+      background-color: #ffffff; /* Blue background */
+      color: #22159A;    /* White text */
+      border: none;    /* Remove border */
+      border-radius: 50%; /* Make it circular */
+      border: 1.6px solid #22159A;
+      width: 50px;     /* Set a width */
+      height: 50px;    /* Set a height */
+      display: flex;   /* Center the content inside */
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+      cursor: pointer; /* Change cursor to pointer */
+      z-index: 1000;   /* Ensure it's on top of other elements */
+    }
+
+    .scroll-to-top-btn:hover {
+      background-color: #dcdaec;
+      border: none;
+    }
+    .scroll-to-top-btn i {
+      font-size: 20px;
+    }
+
+    /*footer*/
+    footer {
+      background-color: #22159A;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    .footer-logo{
+      filter: brightness(0) invert(1);
+    } 
+
+    .footer-section h2.logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .footer-section h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      font-size: 14px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin: 5px 0;
+    }
+
+    .footer-section ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 18px;
+    }
+
+    .social-icons a:hover {
+      color: #FFD700;
+    }
+
+    .footer-section form {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .footer-section input {
+      padding: 10px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      flex: 1;
+    }
+
+    .sbt-btn {
+      width: 50px;
+      padding: 10px;
+      background-color: orange;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .sbt-btn:hover {
+      background-color: rgb(43, 255, 0);
+      color: #000000;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin-top: 20px;
+      padding-top: 10px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <nav class="navbar navbar-expand-lg bg-light fixed-top">
+  <div class="container">
+    <!-- Logo on the left -->
+    <a class="navbar-brand" href="./index.html">
+      <img src="./image/IBM-logo.png" alt="Brand Logo" style="width: 78px; height: 30px">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Centered navigation links -->
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./service.html">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="./contact.html">Contact</a>
+        </li>
+      </ul>
+      <!-- Login icon and Get in Touch button on the right -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">
+            <img src="./image/login-icon.png" class="login-icon image-fluid pt-1" style="width: 31px; height: 32.5px">
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-btn text-bg-warning" href="#contactForm">Get in Touch</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <!-- Image -->
+    <img src="./image/heroicbanner.png" alt="Contact Banner">
+    
+    <!-- Overlay -->
+    <div class="hero-overlay">
+
+    </div>
+    
+    <!-- Content -->
+    <div class="hero-content pt-5">
+      <h1>Contact Us</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center">
+          <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+          <li class="breadcrumb-item active text-light" aria-current="page">Contact</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+  <div class ="container-image pt-3 row">
+    <div class="col-6">
+        <img src="./image/contactheroic2.png"class="img-fluid" alt="Contact Banner"> 
+    </div>
+    
+
+    <div class="contact-form col-6 pt-3">
+        <h4 class="heading4">Get in touch</h4>
+        <b>
+            <p1 class="paragraph1">we provide best services </p1>
+            <br>
+            <p2 class="paragraph1">that you need !</p2>
+        </b>
+        <div class="col-auto ps-5">
+          <label for="yourname" class="visually-hidden">Your Name</label>
+          <input type="name" class="form-control" id="yourname" placeholder="Your Name">
+        </div>
+        <div class="col-auto ps-5">
+          <label for="gmailid" class="visually-hidden">Your Gmail Address</label>
+          <input type="gmailid" class="form-control" id="gmailaddress" placeholder="Your Gmail Address">
+        </div>
+        <div class="col-auto ps-5">
+          <label for="gmailid" class="visually-hidden">Your Gmail Address</label>
+          <input type="gmailid" class="form-control custom-height" id="gmailaddress" placeholder="Type Here !">
+        </div>
+        <div class="col-auto ps-5">
+          <button class="btn1"><b>Send message</b></button>
+        </div>
+    </div>
+  </div>
+  <div class="contact-section3">
+    <center>
+      <h5 class="heading5 p-4 pt-5">Advance Digital metrices</h5>
+      <h2>Contact us via our social channels</h2>
+        <p class="pt-4">Reach out to us and start innovating today.</p>
+        <p>Let's build smarter solition together.</p>
+    </center>
+  </div>
+  <center>
+    <div class="container py-5">
+      <div class="row g-5">
+        <!-- Card 1 -->
+        <div class="col">
+          <div class="card1 text-center p-4">
+            <div class="card-icon">
+              <img src="./image/Mobile-icon.png" alt="Phone Icon"/>
+            </div>
+            <h6 class="card-title text-muted">Phone</h6>
+            <p class="card-text">CALL: 1-800-426-2255</p>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col">
+          <div class="card2 text-center p-4">
+            <div class="card-icon">
+              <img src="./image/Gmail-icon.png" alt="Email Icon"/>
+            </div>
+            <h6 class="card-title text-muted">Email Address</h6>
+            <p class="card-text">rccindia@in.ibm.com</p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col">
+          <div class="card3 text-center p-4">
+            <div class="card-icon">
+              <img src="./image/Location-icon.png" alt="Location Icon"/>
+            </div>
+            <h6 class="card-title text-muted">Location</h6>
+            <span style="font-size: 16.5px;">
+              Subramanya Arcade-2,
+              #12, Bannerghatta Main Road,
+              Bangalore - 560029,
+              INDIA IBM India Pvt. Ltd.
+            </span>
+            <!--span class="card-text">Subramanya Arcade-2,  #12, </span>
+            <span class="card-text">Bannerghatta Main Road, </span>
+            <span class="card-text"> Bangalore - 560029,  </span>
+            <span class="card-text">INDIA IBM India Pvt. Ltd.</span-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-9">
+
+      </div>
+      <div class="scroll-to-top" pe-0 col-3>
+        <button class="scroll-to-top-btn">
+          <i class="fa-solid fa-chevron-up"></i>
+        </button>
+      </div>
+    </div>
+  </center>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <img src="./image/IBM-logo.png" class="footer-logo pb-3" style="width: 78px; height: 42px">
+        <p>Be part of a community that drives innovation. Follow us for updates and insights!</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>#12, Bannerghatta Main Road,<br>Bangalore - 560029.</p>
+        <p>CALL: 1-800-426-2255</p>
+        <p><a href="mailto:rccindia@in.ibm.com">rccindia@in.ibm.com</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Subscribe</h3>
+        <p>Follow our newsletter to stay updated about us</p>
+        <form action="#">
+          <input type="email" placeholder="Your Email Address" required />
+          <button type="submit" class="sbt-btn"><b>></b></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>2024 International Business Machine Corporation. All rights reserved</p>
+    </div>
+  </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+   // Add click event listener to the button
+   document.querySelector('.scroll-to-top-btn').addEventListener('click', function() {
+      // Scroll to the "Get in touch" section
+      const targetSection = document.querySelector('.hero-content');
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
+</html> 

@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#22159A">
+  <link rel="icon" type="image/png" sizes="36x26" href="./image/IBM-logo.png">
+  <title>Welcome to IBM</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="./css/index.css"> -->
+  <style>
+    body{
+      overflow-x: hidden;
+    }
+
+    .nav-btn{
+      border-radius: 5px;
+       /* Optional: Adds shadow for depth */
+    }
+
+    .navbar-nav {
+      margin: 0 auto; /* Center align the navbar items */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Center-align the middle nav links */
+    .navbar-nav.mx-auto {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+    }
+
+    /* Right-align login and button section */
+    .navbar-nav:last-child {
+      margin-left: auto; /* Push to the right */
+    }
+
+    /* Adjust alignment for logo and right section */
+    .navbar-brand {
+      margin-right: 10px;
+    }
+
+    .navbar-nav .nav-item {
+      margin: 0 10px; /* Optional spacing between items */
+    } 
+
+    .nav-btn:hover{
+      color: #fff; /* Change text color to white */
+      background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);      border: none; /* Optional: Ensure no border */
+      transition: all 0.3s ease; /* Smooth transition for hover effect */
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+    }
+
+    /* Add transition effect to the image */
+    .login-icon {
+      transition: filter 0.3s ease; /* Smooth transition effect */
+    }
+
+/* On hover, change color of the image */
+    .login-icon:hover {
+      filter: brightness(0.1) saturate(150%) invert(15%) sepia(50%) saturate(5000%) hue-rotate(220deg) brightness(0.8) contrast(120%);
+    }
+
+/* On click (active), slightly dim the image */
+    .login-icon:active {
+      filter: brightness(0) saturate(100%) invert(31%) sepia(94%) saturate(7481%) hue-rotate(214deg) brightness(1) contrast(92%); /* Slightly dimmed effect on click */
+    }
+
+    .hero-section{
+      padding-top: 90px;
+    }
+
+    .button-container {
+      display: flex; /* Enables flexbox */
+      justify-content: space-around; /* Adds equal space around buttons */
+      align-items: center; /* Vertically centers buttons */
+      margin-top: 20px; /* Optional: Adds spacing from the text above */
+    }
+    
+    .heroicbtn01 {
+      background-color: #ffffff; /* Button color */
+      color:  #FF9500; /* Text color */
+      border: none; /* No border */
+      width: 135px;
+      border-radius: 5px; /* Creates smooth curves */
+      padding: 10px 20px; /* Adjust padding for button size */
+      font-size: 16px; /* Adjust font size */
+      cursor: pointer; /* Pointer cursor on hover */
+      transition: all 0.3s ease; /* Smooth hover effects */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for depth */
+    }
+
+    .heroicbtn01:hover {
+      color: #fff; /* Change text color to white */
+      background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);      border: none; /* Optional: Ensure no border */
+      transition: all 0.3s ease; /* Smooth transition for hover effect */
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Optional: Shadow effect on hover */
+    }
+
+    .heroicbtn02 {
+      background-color: #FF9500; /* Button color */
+      color: #000000; /* Text color */
+      border: none; /* No border */
+      width: 135px;
+      border-radius: 5px; /* Creates smooth curves */
+      padding: 10px 20px; /* Adjust padding for button size */
+      font-size: 16px; /* Adjust font size */
+      cursor: pointer; /* Pointer cursor on hover */
+      transition: all 0.3s ease; /* Smooth hover effects */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for depth */
+    }
+
+    .heroicbtn02:hover {
+      color: #FF9500; /* Change text color to white */
+      background-color: #000000;
+      transition: all 0.3s ease; /* Smooth transition for hover effect */
+      box-shadow: 0 3px 6px #FF9500; /* Optional: Shadow effect on hover */
+    }
+
+    .hero-section {
+      padding-top: 90px;
+      background-image: url('./image/indexheroicbg.gif'); /* Replace with your GIF file path */
+      background-size: cover; /* Ensures the background covers the entire section */
+      background-position: center; /* Center the background image */
+      background-repeat: no-repeat; /* Prevents the GIF from repeating */
+      height: 80vh; /* Adjust the height as necessary */
+      
+    }
+
+    .hero-images-container {
+      position: relative; /* Enables positioning of child elements */
+      width: 100%; /* Full width of the container */
+      height: auto; /* Dynamic height for consistent layout */
+      overflow: hidden; /* Ensures no overflow from the images */
+    }
+
+    /* Base Style for All Images */
+    .hero-image {
+      position: absolute;
+      top: 45%; /* Center vertically */
+      left: 70%; /* Center horizontally */
+      transform: translate(-50%, -50%); /* Align exactly to the center */
+      width: 450px; /* Default width */
+      height: auto; /* Maintain original aspect ratio */
+      object-fit: cover; /* Crop without distortion */
+      z-index: 3; /* Default layer */
+      transition: all 0.3s ease; /* Smooth transitions */
+    }
+
+    /* Hero Image 1 - Positioned Slightly to the Left */
+    .hero-image-1 {
+      z-index: 2; /* Layered behind the main image */
+      transform: translate(calc(-50% - 50px), -50%); /* Slight left shift */
+      width: 550px; /* Larger for prominence */
+      opacity: 1; /* Fully visible */
+      animation: card-rotation-left 2s infinite; /* Continuous rotation */
+    }
+
+    /* Hero Image 2 - Positioned Slightly to the Right */
+    .hero-image-2 {
+      z-index: 1; /* Furthest back layer */
+      transform: translate(calc(-50% + 50px), -50%); /* Slight right shift */
+      width: 550px; /* Larger for prominence */
+      opacity: 1; /* Fully visible */
+      animation: card-rotation-right 2s infinite; /* Continuous rotation */
+    }
+
+    /* Left Rotation Animation */
+    @keyframes card-rotation-left {
+      0% {
+        transform: translate(calc(-50% - 50px), -50%) rotateY(0deg);
+        opacity: 0.9;
+      }
+      50% {
+        transform: translate(calc(-50% - 50px), -50%) rotateY(180deg);
+       opacity: 1; /* Fully visible at midpoint */
+      }
+      100% {
+        transform: translate(calc(-50% - 50px), -50%) rotateY(360deg);
+        opacity: 0.9; /* Back to the initial state */
+      }
+    }
+
+    /* Right Rotation Animation */
+    @keyframes card-rotation-right {
+     0% {
+        transform: translate(calc(-50% + 50px), -50%) rotateY(0deg);
+        opacity: 0.9;
+      }
+      50% {
+        transform: translate(calc(-50% + 50px), -50%) rotateY(180deg);
+        opacity: 1; /* Fully visible at midpoint */
+      }
+      100% {
+        transform: translate(calc(-50% + 50px), -50%) rotateY(360deg);
+        opacity: 0.9; /* Back to the initial state */
+      }
+    }
+
+    h5{
+        color: #22159A;
+        text-align: center;
+        padding-left: 5px;
+    }
+
+    .paragraph1{
+        padding-top: 4px;
+        text-align: center;
+        font-size: 28px;
+    }
+
+    .paragraph2{
+      text-align: center;
+    }
+
+    .discoverbtn{
+      background-color: #FF9500; /* Button color */
+      color: #000000; /* Text color */
+      border: none; /* No border */
+      width: 120px;
+      border-radius: 5px; /* Creates smooth curves */
+      padding: 10px 20px; /* Adjust padding for button size */
+      font-size: 14px; /* Adjust font size */
+      cursor: pointer; /* Pointer cursor on hover */
+      transition: all 0.3s ease; /* Smooth hover effects */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for depth */
+    }
+
+    .discoverbtn:hover {
+      color: #fff; /* Change text color to white */
+      background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);      border: none; /* Optional: Ensure no border */
+      transition: all 0.3s ease; /* Smooth transition for hover effect */
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Optional: Shadow effect on hover */
+    }
+    
+    .scroll-down {
+      position: absolute;
+      bottom: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .scroll-down button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+    }
+
+    .scroll-down i {
+      font-size: 24px;
+      color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .scroll-down i:hover {
+      color: black;
+      transform: scale(1.2);
+    }
+
+    .scroll-down i:hover::after {
+      content: "\f078"; /* FontAwesome chevron-down */
+      font-family: "Font Awesome 6 Free"; /* Use FontAwesome */
+      font-weight: 900;
+      position: absolute;
+      top: 18px; /* Offset for the second arrow */
+      left: 0;
+      font-size: 24px;
+      color: white;
+      opacity: 0.8;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center; /* Centers the content horizontally */
+      padding-left: 0; /* Remove padding on the left */
+      padding-right: 0; /* Remove padding on the right */
+    }
+
+    .card1, .card2, .card3 {
+      border: none;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      width: 280px;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .card1:hover{
+      transform: scale(1.05);
+      box-shadow: -6px -6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    } 
+     
+    .card3:hover {
+      transform: scale(1.05);
+      box-shadow: 6px -6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    }
+
+    .card2:hover{
+      transform: scale(1.05);
+      box-shadow: 0.5px 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Triangle Styles */
+    .triangle {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background-color: #E3E3E3;
+      clip-path: polygon(100% 100%, 100% 0, 0 0);
+      transition: transform 0.5s ease;
+      border-radius: 9px;
+    }
+
+    /* Top-right triangle */
+    .triangle.top-left {
+      top: 0;
+      right: 0;             /*x*/ /*y*/
+      transform: translate(-2000%,-100%);
+      transition: transform 0.5s ease;
+    }
+
+    /* bottom-left triangle */
+    .triangle.top-right {
+      clip-path: polygon(0 100%, 100% 100%, 0 0); /* Shape remains the same */
+      top: 0; /* Start at the top-left corner */
+      left: 0; /* Positioned on the left */
+      transform: translate(0, -100%); /* Move it above the card */
+      transition: transform 0.5s ease;
+    }
+
+    .card1:hover .triangle.top-left
+    {                     /*x y*/
+      transform: translate(0, 0);
+    }
+
+    .card1:hover .triangle.top-right {
+                          /*x y*/
+     transform: translate(0, 400%);
+    }
+
+    .card2:hover .triangle.top-left
+    {                     /*x y*/
+      transform: translate(0, 0);
+    }
+
+    .card2:hover .triangle.top-right {
+                          /*x y*/
+     transform: translate(0, 400%);
+    }
+
+    .card3:hover .triangle.top-left
+    {                     /*x y*/
+      transform: translate(0, 0);
+    }
+
+    .card3:hover .triangle.top-right {
+                          /*x y*/
+     transform: translate(0, 400%);
+    }
+
+    p{
+      font-size: 16.5px;
+    }
+    
+    span{
+      font-size: 14px;
+    }
+ 
+    @keyframes card-rotation {
+      from {
+            transform: rotate(360deg);
+           }
+      to {
+            transform: rotate(0deg);
+         }
+    }
+
+    .cor-feature-container {
+      display: flex;
+      gap: 20px; /* Space between feature cards */
+      justify-content: center;
+      align-items: flex-start; /* Align cards to the top */
+      flex-wrap: wrap; /* Allow cards to wrap in smaller viewports */
+    }
+
+    .cor-feature-card {
+      display: flex;
+      align-items: center;
+      padding: 20px; /* Inner spacing */
+      border-radius: 8px; /* Rounded corners */
+      max-width: 500px; /* Limit the card width */
+      flex: 1; /* Allow cards to resize */
+    }
+
+    .cor-feature-icon {
+      width: 50px; /* Icon size */
+      height: 50px;
+      margin-right: 25px; /* Space between icon and text */
+      transform: translateY(-6px);
+    }
+
+    .cor-feature-text {
+      font-size: 15px;
+      line-height: 1.2;
+    }
+
+    .paragraph5 {
+      text-align: start;
+      font-size: 28px;
+    }
+
+    .paragraph6 {
+      text-align: start;
+      font-size: 28px;
+    }
+
+    .core-feature-card-container {
+      display: flex;
+      justify-content: center; /* Centers the content horizontally */
+      padding-left: 0; /* Remove padding on the left */
+      padding-right: 0; /* Remove padding on the right */
+    }
+
+    /* .row { */
+      /* display: flex; */
+      /*justify-content: center;  Center the content inside the row */
+      /*flex-wrap: wrap;   Allow wrapping of columns if necessary */
+      /* width: 100%; */
+    /* } */
+
+    .core-feature-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60%; /* Use full width of the column */
+      gap: 17px;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .core-feature-card:nth-child(2),
+    .core-feature-card:nth-child(4) {
+      margin-right: 0;  /* Align the 2nd and 4th cards to the left */
+    }
+
+    .core-feature-card:nth-child(1),
+    .core-feature-card:nth-child(3) {
+      margin-left: 210px;  /* Keep the 1st and 3rd cards centered */
+    }
+
+    .core-feature-card:hover {
+      background-color: #22159A; /* Your hover background color */
+      color: #ffffff;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    .core-feature-card .icon {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      transform: rotateY(180deg); /* Flip the image */
+      transition: transform 0.5s ease-in-out; /* Smooth flipping animation */
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+
+    .core-feature-card:hover .icon {
+      transform: translateY(-4px); /* Slight upward lift */
+      filter: brightness(0) invert(1); /* Makes the image white */
+    }
+
+    .core-feature-card .icon img {
+      width: 24px; /* Adjust icon size */
+      height: 24px;
+    }
+
+    .core-feature-card .content {
+      flex: 1;
+    }
+
+    .core-feature-card h3 {
+      font-size: 18px;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .core-feature-card p {
+      font-size: 14px;
+      margin: 5px 0 0;
+    }
+
+    .scroll-to-top-btn{
+      position: fixed; /* Keep the button in a fixed position */
+      bottom: 350px;    /* Position it 50px above the bottom of the viewport */
+      right: 20px;     /* Position it 20px from the right side of the viewport */
+      background-color: #ffffff; /* Blue background */
+      color: #22159A;    /* White text */
+      border: none;    /* Remove border */
+      border-radius: 50%; /* Make it circular */
+      border: 1.6px solid #22159A;
+      width: 50px;     /* Set a width */
+      height: 50px;    /* Set a height */
+      display: flex;   /* Center the content inside */
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+      cursor: pointer; /* Change cursor to pointer */
+      z-index: 1000;   /* Ensure it's on top of other elements */
+    }
+
+    .scroll-to-top-btn:hover {
+      background-color: #dcdaec;
+      border: none;
+    }
+    .scroll-to-top-btn i {
+      font-size: 20px;
+    }
+      /*footer*/
+    footer {
+      background-color: #3924F1;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    .footer-logo{
+      filter: brightness(0) invert(1);
+    } 
+
+    .footer-section h2.logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .footer-section h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      font-size: 14px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin: 5px 0;
+    }
+
+    .footer-section ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 18px;
+    }
+
+    .social-icons a:hover {
+      color: #FFD700;
+    }
+
+    .footer-section form {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+     /* Base styling for placeholder text */
+    .placeholder-custom::placeholder {
+      font-size: 16px; /* Default size */
+      color: #6c757d; /* Use Bootstrap's text-muted color */
+      opacity: 1; /* Ensure full visibility */
+    }
+
+    /* Responsive adjustments for placeholder size */
+    @media (max-width: 768px) { /* Medium screens */
+      .placeholder-custom::placeholder {
+       font-size: 12px; /* Smaller placeholder text for medium screens */
+      }
+    }
+
+    @media (max-width: 576px) { /* Small screens */
+      .placeholder-custom::placeholder {
+      font-size: 12px; /* Even smaller placeholder text for small screens */
+      }
+    }
+
+    /* Optional: Ensure input text matches placeholder size */
+    .placeholder-custom {
+      font-size: 16px; /* Match placeholder default size */
+    }
+
+    @media (max-width: 768px) {
+      .placeholder-custom {
+        font-size: 12px; /* Match placeholder size on medium screens */
+      }
+    }
+
+    @media (max-width: 576px) {
+      .placeholder-custom {
+        font-size: 12px; /* Match placeholder size on small screens */
+      }
+    }
+
+    .footer-section input {
+      padding: 10px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      flex: 1;
+    }
+
+    .sbt-btn {
+      width: 50px;
+      padding: 10px;
+      background-color: orange;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: rgb(43, 255, 0);
+      color: #2929ff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin-top: 20px;
+      padding-top: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <nav class="navbar navbar-expand-lg bg-light fixed-top">
+    <div class="container">
+      <!-- Logo on the left -->
+      <a class="navbar-brand" href="./index.html">
+        <img src="./image/IBM-logo.png" alt="Brand Logo" style="width: 78px; height: 30px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Centered navigation links -->
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./service.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">Contact</a>
+          </li>
+        </ul>
+        <!-- Login icon and Get in Touch button on the right -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">
+              <img src="./image/login-icon.png" class="login-icon image-fluid pt-1" style="width: 31px; height: 32.5px">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-btn text-bg-warning" href="#contactForm">Get in Touch</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!--row Section -->
+  <div class="hero-section row align-items-center pt-5">
+    <div class="col-6">
+        <h5 class="heading5 text-light">Technology and software development</h5>
+        <p></p>
+        <h2 class="text-light ps-5">Offering Smart IT and Software Solution</h2>
+        <p class="text-light ps-5">IBM, a global leader in technology and innovation, has been transforming businesses and driving progress since 1911
+            IBM, a global leader in technology and innovation, has been transforming businesses and driving progress since 1911
+        </p>
+        <div class="button-container">
+            <button class="heroicbtn01">What we do</button>
+            <button class="heroicbtn02">Get start</button>
+        </div>
+    </div>
+    <div class="col-5"> <!-- Removed the inline style -->
+        <div class="hero-image-container">
+          <img src="./image/heroic-profile-bg-0.png" class="hero-image d-none d-md-block img-fluid">
+          <img src="./image/heroic-profile-bg-1.png" class="hero-image hero-image-1 d-none d-md-block  img-fluid">
+          <img src="./image/heroic-profile-bg-2.png" class="hero-image hero-image-2 d-none d-md-block img-fluid">    
+        </div>
+    </div>
+    <div class="scroll-down">
+      <button id="scrollButton">
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+    </div>
+</div>
+  <div class="contact-form col-12 center">
+    <h5 class="heading4 pt-4" id="heading1">About Company</h5>
+    <b>
+        <p class="paragraph1" id="paragraph1">Engaging creativity via technology</p>
+    </b>
+    <br>
+    <p class="paragraph2 px-5" id="paragraph2">Our featured IBM services include Cloud Computing, offering scalable hybrid cloud solutions 
+      through IBM Cloud to enhance flexibility and streamline operations. With Artificial Intelligence (AI) and Data Analytics, powered by Watson AI, 
+      we enable automation, advanced insights, and personalized customer experiences. Additionally, our IT Infrastructure and Consulting Services modernize systems, 
+      enhance cybersecurity, and drive digital transformation through tailored strategies. Together, 
+      these services empower your organization to innovate and thrive in the digital age.</p>
+  </div>
+  
+  <div class="container py-5">
+    <div class="row g-5">
+      <!-- Card 1 -->
+      <div class="col">
+        <div class="card1 d-flex flex-column align-items-center justify-content-center text-center">
+         <!-- Top-Left Triangle -->
+         <div class="triangle top-left"></div>
+         <!-- Bottom-Right Triangle -->
+         <div class="triangle top-right"></div>
+          <div class="card-icon mb-3">
+            <img src="./image/cyber-security-card-img.png" alt="Cyber Security Icon" class="pt-4"/>
+          </div>
+          <h6 class="card-title text-warning">Cyber Security</h6>
+          <p class="card-text p-3 text-muted">
+            Our hybrid cloud platform integrates public, private, and multi-cloud environments, offering scalability, AI optimization, and Kubernetes support for flexibility and innovation.
+          </p>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col">
+        <div class="card2 d-flex flex-column align-items-center justify-content-center text-center bg-secondary-subtle" id="card2">
+           <!-- Top-Left Triangle -->
+           <div class="triangle top-left"></div>
+           <!-- Bottom-Right Triangle -->
+           <div class="triangle top-right"></div>
+          <div class="card-icon mb-3">
+            <img src="./image/Cloud-computing-card-img.png" alt="Cloud Computing Icon" class="pt-4"/>
+          </div>
+          <h6 class="card-title text-info">Cloud Computing</h6>
+          <p class="card-text p-4 text-muted">
+            Hybrid cloud platform integrates public, private, and multi-cloud environments, offering scalability, AI optimization, and Kubernetes support for flexibility and innovation.
+          </p>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col">
+        <div class="card3 d-flex flex-column align-items-center justify-content-center text-center ">
+            <!-- Top-Left Triangle -->
+            <div class="triangle top-left"></div>
+            <!-- Bottom-Right Triangle -->
+            <div class="triangle top-right"></div>
+          <div class="card-icon mb-3">
+            <img src="./image/data-analysist-img.png" alt="Data Analytics Icon" class="pt-4"/>
+          </div>
+          <h6 class="card-title text-primary">Data Analytics</h6>
+          <p class="card-text p-2 text-muted">
+            Our AI and Data Analytics services, led by Watson, empower businesses with automation, advanced insights, and data-driven decision-making, transforming operations and enhancing customer experiences.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class ="container-image pt-3 row">  
+      <div class="contact-form col-7 pt-3 p-5">
+          <h5 class="heading4 text-start ps-4">Core feature</h5>
+          <b>
+              <p class="paragraph1 text-start ps-4">Engaging creativity via technology</p>
+          </b>
+          <p class="paragraph2 text-start ps-4 text-dark">
+            We are global technologyand consulting company specializing in AI, cloud Computing, and quantum computing with a legacy of innovation, we focus on transforming businesses through cutting-edge ebteprise solutions
+          </p>
+          <div class=" mt-3 ps-0">
+            <div class="cor-feature-card">
+              <img src="./image/certification-icon.png" alt="Feature Icon" class="cor-feature-icon" />
+              <p class="core-feature-text text-dark">
+                A comprehensive suite of tools for software development, enabling efficient requirements management, modeling, and testing to ensure high-quality delivery.
+              </p>
+            </div>
+            <div class="cor-feature-card">
+              <img src="./image/CI-CD-icon.png" alt="Feature Icon" class="cor-feature-icon" />
+              <p class="cor-feature-text text-dark">
+                A robust platform designed to streamline collaboration and enhance productivity in team environments for seamless project execution.
+              </p>
+            </div>
+          </div>
+          <br>
+          <div class="col-auto ps-4">
+            <button class="discoverbtn">
+              <b>Discover </b>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+      </div>
+      <div class="col-5">
+        <img src="./image/index-image-02.png"class="img-fluid" alt="Contact Banner"> 
+      </div>
+    </div>
+  </section>
+  <div class="contact-form col-12 center">
+    <h5 class="heading4 pt-4">Technology Service</h5>
+    <b>
+        <p class="paragraph1">We are providing IT software and service</p>
+    </b>
+    <p class="paragraph2">IBM provids a wide rage of IT Software offering innovate solutions in cloud computing,AI cybersecurity, and software development to help businesses transform and optimize their operations.</p>
+  </div>
+  <div class="row">
+    <div class="col-12 align-items-center">
+      <img src="./image/index-image-03.png" class=" mx-auto d-block">
+    </div>
+  </div>
+  
+  <div class="core-featured-card-container py-5">
+    <div class="row p-4 ">
+      <div class="core-featured col-12 text-center">
+        <div class="row g-4"> <!-- Use g-4 for spacing between cards -->
+          <div class="core-feature-card col-md-4 p-4">
+            <div class="icon">
+              <img src="./image/devops-icon.png" alt="Icon" />
+            </div>
+            <div class="content">
+              <h3>Software Development & DevOps</h3>
+              <p>
+                We provide a wide range of IT software services, offering innovative solutions in cloud computing, AI, cybersecurity, and software development to help businesses transform and optimize their operations.
+              </p>
+            </div>
+          </div>
+          <div class="row p-4 px-5">
+            <div class="core-feature-card col-md-4 p-4">
+              <div class="icon">
+                <img src="./image/Cloud-computing-icon.png" alt="Icon" />
+              </div>
+              <div class="content">
+                <h3 >Cloud Computing Solutions</h3>
+                <p>
+                  We provide a wide range of IT software services, offering innovative solutions in cloud computing, AI, cybersecurity, and software development to help businesses transform and optimize their operations.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row p-4 ps-0">
+            <div class="core-feature-card col-md-4 p-4">
+              <div class="icon">
+                <img src="./image/cyber-security-icon.png" alt="Icon" />
+              </div>
+              <div class="content">
+                <h3>Cyber Security Solutions</h3>
+                <p>
+                  We provide a wide range of IT software services, offering innovative solutions in cloud computing, AI, cybersecurity, and software development to help businesses transform and optimize their operations.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row p-4 px-5">
+            <div class="core-feature-card col-md-4 p-4">
+              <div class="icon">
+                <img src="./image/AI-service.png" alt="Icon" />
+              </div>
+              <div class="content">
+                <h3>Artificial Intelligence service</h3>
+                <p>
+                  We provide a wide range of IT software services, offering innovative solutions in cloud computing, AI, cybersecurity, and software development to help businesses transform and optimize their operations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-9">
+
+    </div>
+    <div class="scroll-to-top" pe-0 col-3>
+      <button class="scroll-to-top-btn">
+        <i class="fa-solid fa-chevron-up"></i>
+      </button>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <img src="./image/IBM-logo.png" class="footer-logo pb-3" style="width: 78px; height: 42px">
+        <p>Be part of a community that drives innovation. Follow us for updates and insights!</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>#12, Bannerghatta Main Road,<br>Bangalore - 560029.</p>
+        <p>CALL: 1-800-426-2255</p>
+        <p><a href="mailto:rccindia@in.ibm.com">rccindia@in.ibm.com</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Subscribe</h3>
+        <p>Follow our newsletter to stay updated about us</p>
+        <form action="#" class="row justify-content-center">
+          <div class="col-md-7 col-sm-8 col-10">
+            <div class="input-group">
+              <input
+                type="email"
+                class="form-control placeholder-custom"
+                placeholder="Your Email Address"
+                required
+              />
+              <button type="submit" class="btn btn-primary"><b>></b></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>2024 International Business Machine Corporation. All rights reserved</p>
+    </div>
+  </footer>
+  <script>
+    // script.js
+    document.getElementById("scrollButton").addEventListener("click", function () {
+      const heading1 = document.getElementById("heading1");
+      heading1.scrollIntoView({ behavior: "smooth" });
+    });
+  
+    // Add click event listener to the button
+    document.querySelector('.scroll-to-top-btn').addEventListener('click', function() {
+      // Scroll to the "Get in touch" section
+      const targetSection = document.querySelector('.hero-section');
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
